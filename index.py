@@ -3,6 +3,7 @@ from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader, ServiceCont
 
 # initialize simple vector indices + global vector index
 service_context = ServiceContext.from_defaults(chunk_size_limit=512)
+# 加载data文件夹下的示例文本
 documents = SimpleDirectoryReader('data').load_data()
 index = GPTSimpleVectorIndex.from_documents(documents, service_context=service_context)
 
